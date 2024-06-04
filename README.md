@@ -20,7 +20,7 @@ The To-Do List Application is designed to help users efficiently manage their da
 HTML CSS JAVASCRIPT
 
 # Usage:
-Feel free to clone the repository and use it.
+https://daronjohn.github.io/To-Do-List/ to open the app
 
 # License:
 Icons by Icons8
