@@ -1,0 +1,247 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url(./assets/background.jpg) no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.container {
+  width: 90%; 
+  max-width: 400px;
+  height: auto;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.1); 
+  border: 2px solid #ec60ffa1;
+  border-radius: 20px;
+  backdrop-filter: blur(13px);
+}
+
+h1 {
+  color: #eee;
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.input-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.todo-input {
+  flex: 1;
+  outline: none;
+  padding: 10px 10px 10px 20px;
+  background-color: transparent;
+  border: 2px solid #ec60ffa1;
+  border-radius: 25px;
+  color: #eee;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.todo-input::placeholder {
+  color: #c0c0c0;
+}
+
+.add-button {
+  border: none;
+  outline: none;
+  background: #ec60ffa1;
+  color: #fff;
+  font-size: 35px;
+  cursor: pointer;
+  border-radius: 40px;
+  width: 40px;
+  height: 40px;
+}
+
+.empty-image {
+  margin: 20px auto 0;
+  display: block;
+  width: 100%;
+  max-width: 250px;
+}
+
+.todo {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #6c30dd;
+  border-radius: 15px;
+  margin: 16px 0;
+  padding: 10px 12px;
+  border: 2px solid #ec60ffa1;
+  transition: all 0.2s ease;
+}
+
+.todo:first-child {
+  margin-top: 0;
+}
+
+.todo:last-child {
+  margin-bottom: 0;
+}
+
+.todo:hover {
+  background-color: #ec60ffa1;
+}
+
+.todo label {
+  cursor: pointer;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+  color: #eee;
+}
+
+.todo span {
+  padding-left: 20px;
+  position: relative;
+  cursor: pointer;
+}
+
+span::before {
+  content: "";
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  margin-left: -30px;
+  border-radius: 100px;
+  border: 2px solid #ec60ffa1;
+}
+
+input[type='checkbox'] {
+  visibility: hidden;
+}
+
+input:checked + span {
+  text-decoration: line-through;
+}
+
+.todo:hover input:checked + span::before, input:checked + span::before {
+  background: url(./assets/check.svg) 55% 55% no-repeat #09bb21;
+  border-color: #09bb21;
+}
+
+.todo:hover span::before {
+  border-color: #eee;
+}
+
+.todo .delete-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #eee;
+  font-size: 24px;
+}
+
+.todos-container {
+  height: 300px;
+  overflow: overlay;
+}
+
+.todos-container::-webkit-scrollbar-track {
+  background: rgb(247, 247, 247);
+  border-radius: 20px;
+}
+
+.todos-container::-webkit-scrollbar {
+  width: 0;
+}
+
+.todos-container:hover::-webkit-scrollbar {
+  width: 7px;
+}
+
+.todos-container::-webkit-scrollbar-thumb {
+  background: #d5d5d5;
+  border-radius: 20px;
+}
+
+.filters {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.filter {
+  color: #eee;
+  padding: 5px 15px;
+  border-radius: 100px;
+  border: 2px solid #ec60ffa1;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.filter.active, .filter:hover {
+  background-color: #ec60ffa1;
+}
+
+.delete-all {
+  display: flex;
+  color: #eee;
+  padding: 7px 15px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.delete-all:hover {
+  border-radius: 5px;
+  background-color: #ec60ffa1;
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: 90%; 
+    padding: 20px; 
+  }
+
+  h1 {
+    font-size: 1.5em; 
+    margin-bottom: 20px; 
+  }
+
+  .input-container {
+    flex-direction: column; 
+    align-items: stretch; 
+  }
+
+  .todo-input {
+    margin-bottom: 10px; 
+    margin-right: 0; 
+  }
+
+  .add-button {
+    width: 100%; 
+    font-size: 24px; 
+  }
+
+  .filters {
+    flex-direction: column; 
+    align-items: stretch; 
+  }
+
+  .filter, .delete-all {
+    margin-bottom: 10px; 
+    text-align: center;
+  }
+
+  .filter, .delete-all {
+    width: 100%; 
+  }
+}
