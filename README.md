@@ -25,11 +25,11 @@ HTML CSS JAVASCRIPT
 # Installation: 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/DaronJohn/todo-list-app.git
+   git clone https://github.com/DaronJohn/To-Do-List.git
    
 2. Navigate to the project directory
    ```sh
-   cd todo-list-app
+   cd To-Do-List
 
 3. Install dependencies:
    ```sh
